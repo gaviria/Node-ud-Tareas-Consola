@@ -3,12 +3,11 @@ const { inquirerMenu, pausa, leerInput } = require("./helpers/inquirer");
 const Tareas = require("./models/tareas");
 
 const main = async () => {
-    console.log("hola mundo");
-
     let opt = "";
     const tareas = new Tareas();
 
     do {
+        /*Imprime el menu*/
         opt = await inquirerMenu();
 
         switch (opt) {
@@ -19,7 +18,7 @@ const main = async () => {
                 break;
 
             case "2":
-                console.log(tareas._listado);
+                console.log(tareas.listadoArr);
                 break;
 
             case "3":

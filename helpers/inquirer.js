@@ -9,31 +9,31 @@ const preguntas = [
         choices: [
             {
                 value: "1",
-                name: "1. Crear Tarea",
+                name: `${"1.".green} Crear Tarea`,
             },
             {
                 value: "2",
-                name: "2. Listar Tarea",
+                name: `${"2.".green} Listar Tarea`,
             },
             {
                 value: "3",
-                name: "3. Listar Tareas Completadas",
+                name: `${"3.".green} Listar Tareas Completadas`,
             },
             {
                 value: "4",
-                name: "4. Listar Tareas Pendientes",
+                name: `${"4.".green} Listar Tareas Pendientes`,
             },
             {
                 value: "5",
-                name: "5. Completar Tarea(s)",
+                name: `${"5.".green} Completar Tarea(s)`,
             },
             {
                 value: "6",
-                name: "6. Borrar tarea",
+                name: `${"6.".green} Borrar tarea`,
             },
             {
                 value: "0",
-                name: "0. Salir",
+                name: `${"0.".green} Salir`,
             },
         ],
     },
@@ -42,7 +42,7 @@ const preguntas = [
 const inquirerMenu = async () => {
     console.clear();
     console.log("==============================".green);
-    console.log("     Seleccione una opción".green);
+    console.log("     Seleccione una opción".white);
     console.log("==============================\n".green);
 
     const { opcion } = await inquirer.prompt(preguntas);
@@ -63,6 +63,11 @@ const pausa = async () => {
     await inquirer.prompt(question);
 };
 
+/**
+ *
+ * @param {String} message
+ * @returns
+ */
 const leerInput = async (message) => {
     const question = [
         {
